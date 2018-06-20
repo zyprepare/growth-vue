@@ -1,0 +1,25 @@
+// 定义字号大小
+$font-size-content: 24;  //文本字号大小
+$font-size-title: 28;  //标题字号大小
+
+// 定义字体颜色
+$color-title: #222;   //标题字体颜色
+$color-content: #666; //文本字体颜色
+$color-content-soft: #999;  //文本字体颜色 浅色
+
+// 主题颜色
+$color-theme: #f56c01;
+$color-muted: #f23030;  //主题颜色 深色
+
+// 背景色
+$bg-primary: #eee;
+$bg-info: #fcfcfc;
+
+
+.hide{
+  display: none;
+}
+
+.gray{
+  color: #d0d0d0;
+}

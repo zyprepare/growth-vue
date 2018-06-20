@@ -1,0 +1,5 @@
+export const INCREASE = 'INCREASE'
+export const REST = 'REST'
+export const DATA = 'DATA'
+export const UPDATE = 'UPDATE'
+export const MAINTAIN = 'MAINTAIN'

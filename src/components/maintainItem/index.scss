@@ -1,0 +1,261 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/base.scss';
+.maintain-item {
+    margin-top: rem(20);
+    background-color: $bg-info;
+}
+
+.maintain-item-header {
+    position: relative;
+    width: 100%;
+    height: rem(114);
+    border-bottom: rem(2) solid #d8d8d8;
+    .maintain-item-header-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: rem(93);
+        height: 100%;
+        .goods-check {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%; // background: #fff;
+            // border: 2px solid #ccc;
+            // outline: 0;
+            display: inline-block;
+            opacity: 0;
+            z-index: 10;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .goods-check:checked+.goods-check-icon {
+            position: absolute;
+            left: rem(30);
+            top: rem(33);
+            width: rem(40);
+            height: rem(40);
+            background: url('../../assets/Rounded Checkbox Copy 2.png') no-repeat top left;
+            background-size: contain;
+        }
+        .goods-check-icon {
+            position: absolute;
+            left: rem(30);
+            top: rem(33);
+            width: rem(40);
+            height: rem(40);
+            background: url('../../assets/Rounded Checkbox Copy.png') no-repeat top left;
+            background-size: contain;
+        }
+    }
+    .maintain-item-header-middle {
+        height: 100%;
+        padding: 0 rem(60) 0 rem(93);
+        .maintain-item-header-middle-top {
+            padding-top: rem(20);
+            .maintain-item-title {
+                @include fontSize(30);
+                color: $font-size-title;
+                font-weight: 700;
+            }
+        }
+        .maintain-item-describe {
+            @include fontSize(22);
+            color: $color-content-soft;
+        }
+    }
+    .maintain-item-header-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: rem(60);
+        height: 100%;
+        .edit,
+        .editing {
+            display: inline-block;
+            width: rem(24);
+            height: rem(24);
+            margin-top: rem(44);
+        }
+        .edit {
+            background: url('../../assets/Group 6.png') no-repeat top left;
+            background-size: contain;
+        }
+        .editing {
+            background: url('../../assets/Rectangle 24.png') no-repeat top left;
+            background-size: contain;
+        }
+        .down {
+            display: inline-block;
+            width: rem(24);
+            height: rem(14);
+            background: url('../../assets/Group 7 Copy 2.png') no-repeat top left;
+            background-size: contain;
+            margin-top: rem(50);
+        }
+    }
+}
+
+.maintain-item-content {
+    .maintain-item-goods {
+        padding: rem(20) rem(20) 0 rem(93);
+        border-bottom: rem(2) solid #f2f2f2;
+        overflow: hidden;
+        .maintain-item-goods-img {
+            position: absolute;
+            float: left;
+            width: rem(120);
+            height: rem(120);
+            img {
+                width: rem(120);
+                height: rem(120);
+            }
+        }
+        .maintain-item-goods-imgcls {
+            width: rem(120);
+            height: rem(120);
+        }
+        .tag {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: rem(70);
+            height: rem(26);
+            line-height: rem(26);
+            padding-left: rem(6);
+            background: url('../../assets/Group 1.png') no-repeat top left;
+            background-size: contain;
+            color: #fff;
+            @include fontSize(18);
+        }
+        .maintain-item-goods-detail {
+            padding-left: rem(140);
+            .maintain-item-goods-detail-title .goods-title {
+                @include fontSize(26);
+                color: $color-title;
+                line-height: rem(36);
+                display: -webkit-box; // 将元素设为弹性盒模型
+                -webkit-line-clamp: 2; // 文本最大行数
+                /* autoprefixer: off */
+                -webkit-box-orient: vertical; // 模型内元素垂直排列
+                /* autoprefixer: on */
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .maintain-item-goods-tag {
+                margin-top: rem(8);
+                .warp {
+                    box-sizing: content-box;
+                    border: rem(1) solid $color-theme;
+                    border-radius: rem(4);
+                    @include fontSize(22);
+                    color: $color-theme;
+                    display: inline-block;
+                    padding: 0 rem(4);
+                }
+            }
+            .maintain-item-goods-number-show {
+                height: rem(42);
+                line-height: rem(42);
+                color: $color-muted;
+                padding-bottom: rem(10); // padding-bottom:rem(38);
+                .maintain-item-goods-price-flag {
+                    @include fontSize(22);
+                }
+                .maintain-item-goods-price {
+                    @include fontSize(30);
+                    font-weight: 700;
+                }
+                .maintain-item-goods-num-flag {
+                    float: right;
+                    padding-right: rem(10);
+                    @include fontSize(20);
+                    color: $color-content;
+                }
+            }
+            .oil-quantity {
+                height: rem(30);
+                line-height: rem(30);
+                @include fontSize(22);
+                padding-bottom: rem(14);
+                color: $color-content;
+                .oil {
+                    color: $color-theme;
+                }
+            }
+        }
+        .maintain-item-goods-change {
+            padding: rem(36) 0 rem(84) rem(206);
+            overflow: hidden;
+            .goods-change {
+                float: left;
+                padding-top: rem(8);
+                left: 0;
+                padding-right: rem(38);
+                height: rem(30);
+                line-height: rem(26);
+                .change-tag {
+                    float: left;
+                    width: rem(26);
+                    height: rem(30);
+                    padding-right: rem(10);
+                    background: url('../../assets/change-3.png') no-repeat top left;
+                    background-size: contain;
+                }
+                .change-text {
+                    float: left;
+                    @include fontSize(22);
+                    line-height: rem(30);
+                    color: $color-theme;
+                }
+            }
+            .maintain-item-goods-number-change {
+                float: left;
+                width: rem(168);
+                height: rem(46);
+                line-height: rem(46); // margin-top: rem(64);
+                border: 1px solid #d0d0d0;
+                border-radius: rem(6);
+                text-align: center;
+                color: $color-title;
+                .number-change {
+                    float: right;
+                    height: 100%;
+                    width: rem(48);
+                    line-height: rem(46);
+                    text-align: center;
+                    @include fontSize(40);
+                    font-family: "simSun";
+                    font-weight: 700;
+                }
+                .number-show {
+                    float: right;
+                    width: rem(70);
+                    height: 100%;
+                    line-height: rem(46);
+                    border-left: rem(1) solid #d0d0d0;
+                    border-right: rem(1) solid #d0d0d0;
+                    @include fontSize(22);
+                }
+            }
+        }
+    }
+    .maintain-item-server {
+        height: rem(44);
+        line-height: rem(44);
+        @include fontSize(20);
+        color: #bfbfbf;
+        padding-left: rem(93);
+    }
+    .maintain-item-footer {
+        height: rem(60);
+        line-height: rem(60);
+        text-align: center;
+        background-color: #fff;
+        .up {
+            width: rem(22);
+            height: rem(14);
+        }
+    }
+}

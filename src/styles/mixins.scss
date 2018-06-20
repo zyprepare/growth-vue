@@ -1,0 +1,8 @@
+$phoneW: 750;
+@function rem($val) {
+  @return $val/$phoneW * 10rem;
+}
+
+@mixin fontSize($px) {
+  font-size: round($px / 2) * 1px;
+}

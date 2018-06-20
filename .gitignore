@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+war
+.svn
+temp
+tmp
+/.idea
+*.iml
+.debug.log
