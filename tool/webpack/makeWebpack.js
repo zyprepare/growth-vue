@@ -19,7 +19,8 @@ const makeWebpack = (options) => {
     entry: entry,
     output: {
       path: path.resolve(process.cwd(), 'dist'),
-      filename: '[name].js'
+      filename: '[name].js',
+      chunkFilename: '[name].chunk.js'
     },
     module: {
       rules: [
@@ -109,7 +110,7 @@ const makeWebpack = (options) => {
           test: [/\.gif$/, /\.jpe?g$/, /\.png$/],
           loader: 'url-loader',
           options: {
-            name: '[name]-[hash:5].[ext]',
+            name: '[name].[ext]?v=[hash:5]',
             limit: 10000, //1w字节以下大小的图片会自动转成base64
           },
         },
@@ -159,13 +160,15 @@ const makeWebpack = (options) => {
     resolve: {
       extensions: ['.js', '.json', ".vue"],
       alias: {
-        'vue$': 'vue/dist/vue.esm.js'
+        'vue$': 'vue/dist/vue.esm.js',
+        '@': resolve('src')
       }
     },
   }
 
   config.devtool = !production ? 'cheap-module-source-map' : 'null';
   config.output.filename = !production ? '[name].js' : '[name].js?v=[chunkhash:8]';
+  config.output.chunkFilename = !production ? '[name].js' : '[name].js?v=[chunkhash:8]';
 
   if (!production) {
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
@@ -183,6 +186,10 @@ const makeWebpack = (options) => {
         }
       }
     }
+  }
+
+  function resolve(dir) {
+    return path.resolve(process.cwd(), dir)
   }
 
   return config;

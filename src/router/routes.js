@@ -1,12 +1,19 @@
-import Test from '../views/home'
-
-const testRoute = {
-  path: '/test',
-  component: Test
-}
+// import Index from '../views/index'
+// import Home from '../views/home'
 
 const routes = [
-  testRoute
+  {
+    path: '/',
+    component: resolve => {
+      require.ensure([], () => resolve(require('@/views/index')), 'indexView')
+    }
+  },
+  {
+    path: '/home',
+    component: resolve => {
+      require.ensure([], () => resolve(require('@/views/home')), 'homeView')
+    }
+  }
 ]
 
 export default routes
