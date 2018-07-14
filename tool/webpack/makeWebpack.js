@@ -19,8 +19,7 @@ const makeWebpack = (options) => {
     entry: entry,
     output: {
       path: path.resolve(process.cwd(), 'dist'),
-      filename: '[name].js',
-      chunkFilename: '[name].chunk.js'
+      filename: '[name].js'
     },
     module: {
       rules: [
@@ -168,7 +167,6 @@ const makeWebpack = (options) => {
 
   config.devtool = !production ? 'cheap-module-source-map' : 'null';
   config.output.filename = !production ? '[name].js' : '[name].js?v=[chunkhash:8]';
-  config.output.chunkFilename = !production ? '[name].js' : '[name].js?v=[chunkhash:8]';
 
   if (!production) {
     config.plugins.push(new webpack.HotModuleReplacementPlugin());

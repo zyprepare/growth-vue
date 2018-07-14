@@ -1,8 +1,8 @@
 <template>
   <div>
     <slot></slot>
-    <button @click="add" :style="{width: '200px', background: '#acdacd', margin: '10px'}">{{myCountObj.count}}</button>
-    <button @click="update">update</button>
+    <button @click="add" :style="{width: '100px', background: '#acdacd', margin: '10px 10px 10px 0'}">{{myCountObj.count}}</button>
+    <button @click="update" :style="{width: '100px', background: '#faccee'}">update</button>
   </div>
 </template>
 
@@ -11,8 +11,7 @@ export default {
   data() {
     return {
       myCount: this.count,
-      myCountObj: {count:1, type:1}
-      // myCountObj: this.countobj
+      myCountObj: { count: 1, type: 1 }
     }
   },
   props: {

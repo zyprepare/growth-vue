@@ -1,6 +1,3 @@
-// import Index from '../views/index'
-// import Home from '../views/home'
-
 const routes = [
   {
     path: '/',
