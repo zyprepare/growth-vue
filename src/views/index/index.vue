@@ -5,7 +5,6 @@
     <div>
       <router-link to="/home">go home view</router-link>
     </div>
-    <img src="../../assets/jixiang.png" @click="update" />
   </div>
 </template>
 
@@ -23,8 +22,11 @@ export default {
   name: "app",
   data() {
     return {
-      msg: "welcome to index view"
+      msg: "welcome to index view",
+      dsh: "abc"
     };
+  },
+  methods: {
   },
   beforeCreate: function () {
     console.group('beforeCreate 创建前状态===============》');

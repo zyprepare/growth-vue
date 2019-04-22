@@ -11,5 +11,8 @@ module.exports = makeWebpack({
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
+  },
+  devServer: {
+    port: 8082
   }
 });

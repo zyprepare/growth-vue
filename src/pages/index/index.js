@@ -8,10 +8,16 @@ if (module.hot) {
   module.hot.accept();
 }
 
+// Vue.directive('scroll', {
+//   inserted: function (el, binding) {
+//     // console.log(el)
+//     // console.log(binding)
+//   }
+// })
+
 new Vue({
   router,
   store
 }).$mount('#app')
 
-Vue.use(VueLazyLoad, {
-})
+Vue.use(VueLazyLoad, {})
